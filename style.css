@@ -1,0 +1,227 @@
+.track_wrap{
+    font-family: 'Montserrat';
+    padding:47px 38px ;
+    width: 370px;
+    height: 580px;
+    margin: 0 auto;
+    margin-top: 30px;
+
+    background: #9ECEE9;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+h2{
+
+    /* font-style: normal; */
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    color: #383838;
+    margin-bottom: 20px;
+}
+
+
+.track_task-wrap{
+    
+}
+
+.track_task{
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    max-height: 100px;
+    overflow: hidden;
+    animation-name: taskAdd;
+    animation-duration: 1s;
+}
+
+@keyframes taskAdd{
+    from{
+        max-height: 0px;
+    }
+    to{
+        max-height: 100px;
+    }
+}
+
+.remove{
+    overflow: hidden;
+    /* height: 0px; */
+    /* background: red; */
+    margin-bottom: 0px;
+    max-height: 0px;
+    animation-name: removeTaskHeight;
+    animation-duration: 1s;
+    
+}
+
+@keyframes removeTaskHeight{
+    0%{
+        max-height: 100px;
+        margin-bottom: 24px;
+    }
+    50%{
+        max-height: 100px;
+        margin-bottom: 24px;
+    }
+    100%{
+        max-height: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+
+
+
+
+/* Task Name Settings */
+
+.track_task-name{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    position: relative;
+}
+
+.remove .track_task-name::after{
+    content: '';
+    height: 2px;
+    top: 50%;
+    border-radius: 100px;
+    width: 100%;
+    background: black;
+    position: absolute;
+    left: 0px;
+    animation-name: lineMove;
+    animation-duration:0.5s;
+    
+    
+    
+}
+
+@keyframes lineMove{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+    
+}
+
+
+
+
+
+
+
+.line{
+    margin-bottom: 34px;
+    width: 100%;
+    height: 5px;
+    background: #383838;
+    border-radius: 100px;
+}
+
+/* Add Wrap Settings */
+.track_add-wrap{
+    display: flex;
+    justify-content: space-between;
+}
+
+.track_add-wrap input{
+    font-family: 'Montserrat';
+    background: #D9D9D9;
+    border: 1px solid #383838;
+    border-radius: 10px;
+    width: 220px;
+    padding-left: 10px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.track_add-btn{
+    height: 40px;
+    width: 100px;
+    background: #D9D9D9;
+    border: 1px solid #383838;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #383838;
+    cursor: pointer;
+}
+
+
+/* Task Mark Settings */
+
+.track_task-mark{
+    margin-right: 18px;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #000000;
+    border-radius: 100px;
+    cursor: pointer;
+    
+}
+
+
+
+.track_task-mark{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.track_task-mark-checked{
+    width: 110%;
+    height: 110%;
+    display: none;
+    opacity: 0;
+}
+
+.track_task-mark-checked svg{
+    display: none;
+}
+
+.track_task-mark-checked .track_task-icon{
+    width: 55%;
+}
+
+
+.track_task-mark-checked{
+    background:#D9D9D9;
+    cursor: default;
+}
+
+.remove .track_task-mark-checked{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    animation-name: markOp;
+    animation-duration: 0.5s;
+    
+}
+
+@keyframes markOp{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.remove .track_task-mark-checked svg{
+    display: block;
+}
